@@ -1,0 +1,77 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Sora', sans-serif;
+  font-size: 1.8rem;
+  background-color: v.$bg-container;
+}
+.content{
+  width: 95%;
+  max-width: 1440px;
+  margin: 2rem auto;
+  background-color: v.$bg-container;
+  .review{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    &__fig{
+      width: 35px;
+      height: 35px;
+      background-color: v.$bg-start;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__title{
+      font-size: 2.8rem;
+      color: v.$text-title;
+    }
+    &__info{
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: v.$bg-start-not;
+    }
+    &__list{
+      list-style: none;
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: v.$bg-start-not;
+      margin: 2rem 0;
+      .review__item{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+  .cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    :first-child{
+      align-self: flex-end
+    }
+    :last-child{
+      align-self: flex-start
+    }
+    .card{
+      @include m.card;
+    }
+  }
+
+}
